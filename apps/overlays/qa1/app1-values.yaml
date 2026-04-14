@@ -8,8 +8,8 @@ data:
     replicaCount: 2
 
     image:
-      repository: myrepo/app1
-      tag: qa1-v1
+      repository: nginx
+      tag: latest
 
     service:
       port: 8080
