@@ -8,4 +8,4 @@ resources:
   - app3-values.yaml
 
   # 👇 THIS IS REQUIRED
-  - ../../base/app1/helmrelease.yaml
+  - ../../base/app3/helmrelease.yaml
