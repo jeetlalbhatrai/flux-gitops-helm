@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: yourcompany-charts
+  namespace: flux-system
+spec:
+  interval: 10m
+  url: https://github.com/jeetlalbhatrai/flux-gitops-helmcharts.git

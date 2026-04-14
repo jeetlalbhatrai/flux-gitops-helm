@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app1-values
+  namespace: qa2
+data:
+  values.yaml: |
+    replicaCount: 2
+
+    image:
+      repository: myrepo/app1
+      tag: qa1-v1
+
+    service:
+      port: 8080
+
+    env:
+      ENV: qa1
+
+    ingress:
+      enabled: true
+      hosts:
+        - host: app1.qa1.example.com
