@@ -1,16 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: app3-java
+  name: app3
+  namespace: qa3
 spec:
   interval: 5m
+
   chart:
     spec:
-      chart: java-app-chart
-      version: "1.0.0"
+      chart: .   # ✅ ROOT path
       sourceRef:
-        kind: HelmRepository
-        name: flux-gitops-helmcharts
+        kind: GitRepository
+        name: flux-gitops-helm
         namespace: flux-system
 
   valuesFrom:
