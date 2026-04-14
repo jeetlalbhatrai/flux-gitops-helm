@@ -39,8 +39,8 @@ flux create source git gitops-repo \
 
 kubectl apply -f git-source.yaml
 
-flux create source git new-repo \
-  --url=https://github.com/your-org/new-repo \
+flux create source git flux-gitops-helm \
+  --url=https://github.com/jeetlalbhatrai/flux-gitops-helm \
   --branch=main \
   --interval=1m
 
@@ -70,3 +70,26 @@ HelmRelease
 Helm Chart (yourcompany repo)
    ↓
 Kubernetes Deployment + Service
+
+to check attached gitops repo---
+flux get sources git
+
+flux get kustomizations
+flux get helmreleases -A
+
+to create kustomization for each Env....
+flux create kustomization qa1-apps \
+  --source=flux-gitops-helm \
+  --path="./clusters/qa1" \
+  --prune=true \
+  --interval=1m
+
+flux create kustomization qa1-apps \
+  --source=flux-gitops-helm \
+  --path="./clusters/qa1" \
+  --prune=true \
+  --interval=1m
+
+flux get helmreleases -A
+
+flux delete kustomization qa1-apps
