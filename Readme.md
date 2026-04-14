@@ -106,3 +106,6 @@ cd flux-gitops-helm/
 kustomize build apps/overlays/qa1
 
 flux get helmreleases -A
+
+flux reconcile source git flux-gitops-helm
+flux reconcile kustomization qa1-apps --with-source

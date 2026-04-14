@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: app1
+  namespace: qa1
+
+spec:
+  values:
+    replicaCount: 4
+    image:
+      repository: nginx
+      tag: 1.25   # 👈 override here

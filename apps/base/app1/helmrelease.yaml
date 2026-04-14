@@ -15,24 +15,14 @@ spec:
         namespace: flux-system   # ✅ REQUIRED
       interval: 1m               # ✅ recommended
 
-  valuesFrom:
-    - kind: ConfigMap
-      name: app1-values
+  values:
+    replicaCount: 1
 
+    image:
+      repository: nginx
+      tag: latest
 
+    containerPort: 80
 
-  # values:
-  #   replicaCount: 2
-
-  #   image:
-  #     repository: your-docker-repo/app1
-  #     tag: latest
-
-  #   service:
-  #     type: ClusterIP
-  #     port: 80
-
-  #   resources:
-  #     limits:
-  #       cpu: "500m"
-  #       memory: "512Mi"
+    service:
+      port: 80
