@@ -1,8 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: GitRepository
 metadata:
-  name: yourcompany-charts
+  name: helm-charts-repo
   namespace: flux-system
 spec:
-  interval: 10m
-  url: https://github.com/jeetlalbhatrai/flux-gitops-helmcharts.git
+  interval: 1m
+  url: https://github.com/jeetlalbhatrai/flux-gitops-helmcharts
+  ref:
+    branch: main
