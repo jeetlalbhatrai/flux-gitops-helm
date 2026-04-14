@@ -104,3 +104,5 @@ kubectl apply -f infrastructure/sources/helm-repo.yaml
 flux get kustomizations
 cd flux-gitops-helm/
 kustomize build apps/overlays/qa1
+
+flux get helmreleases -A
