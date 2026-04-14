@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: app1-values
+  name: app2-values
   namespace: qa1
 data:
   values.yaml: |
