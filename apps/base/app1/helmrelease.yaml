@@ -8,11 +8,12 @@ spec:
 
   chart:
     spec:
-      chart: .   # ✅ ROOT path
+      chart: .   # your chart is at repo root
       sourceRef:
         kind: GitRepository
-        name: flux-gitops-helm
-        namespace: flux-system
+        name: helm-charts-repo
+        namespace: flux-system   # ✅ REQUIRED
+      interval: 1m               # ✅ recommended
 
   valuesFrom:
     - kind: ConfigMap
