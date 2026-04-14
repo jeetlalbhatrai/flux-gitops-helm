@@ -93,3 +93,14 @@ flux create kustomization qa1-apps \
 flux get helmreleases -A
 
 flux delete kustomization qa1-apps
+
+
+
+comand to check step by step-
+flux get sources git
+flux get sources helm
+
+kubectl apply -f infrastructure/sources/helm-repo.yaml
+flux get kustomizations
+cd flux-gitops-helm/
+kustomize build apps/overlays/qa1

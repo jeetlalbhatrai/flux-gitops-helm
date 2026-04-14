@@ -6,3 +6,8 @@ resources:
   - app1-values.yaml
   - app2-values.yaml
   - app3-values.yaml
+
+  # 👇 THIS IS REQUIRED
+  - ../../base/app1/helmrelease.yaml
+  - ../../base/app2/helmrelease.yaml
+  - ../../base/app3/helmrelease.yaml
