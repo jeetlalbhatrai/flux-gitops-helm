@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: app1-values
-  namespace: qa3
+  namespace: qa1
 data:
   values.yaml: |
     replicaCount: 2
